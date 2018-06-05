@@ -1,0 +1,12 @@
+<div class="search-area">
+  <div class="results">
+      <h2>Search Result</h2>
+      <div class="items">
+          <ul *ngFor="let result of results; let i = index" (click) = "getEntry(i)">
+              {{result.creationDate}} : {{result.title}}
+          </ul>
+      </div>
+  </div>
+</div>
+
+  

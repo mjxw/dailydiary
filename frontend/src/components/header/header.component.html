@@ -1,0 +1,10 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="container">
+    <!-- <a class="navbar-brand">Navbar</a> -->
+    <img src="assets/xoom-logo.png" class="navbar-brand">    
+    <form #searchForm="ngForm" (ngSubmit)="search(searchForm.value)" class="form-inline" ngNativeValidate>
+      <input class="form-control mr-sm-2" name="searchVal"type="search" placeholder="Search" aria-label="Search" required ngModel>
+      <button class="btn btn-outline-success my-2 my-sm-0"  type="submit">Search</button>
+    </form>
+  </div>
+  </nav>

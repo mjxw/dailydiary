@@ -1,0 +1,49 @@
+<div class="entry-area">
+  <div class="content">
+		
+		<!--Show diary in edit mode if editingMode is true-->
+		<div *ngIf="editingMode; else standardView"> 
+			<form #diaryEntry = "ngForm" (ngSubmit) = "updateDiary(diaryEntry.value)" ngNativeValidate>
+				<div class="entry-header">
+						<div class="form-group" id="title-form">
+							<input type="text" class="form-control" name="title" [(ngModel)]="title" placeholder="Title" required ngModel>
+						</div>
+					<h3 class="date">{{entryDate}}</h3>
+				</div>
+				<div class="entry-body">
+						<div class="form-group">
+								<textarea class="form-control" [(ngModel)]="entry" name="entry" placeholder="Click 'Save' to save this entry"id="page-entry" rows="15" required ngModel></textarea>
+						</div>
+				</div>
+				<div class="edit">
+					<button type="submit" class="btn btn-outline-primary">Save</button>  
+				</div>
+			 </form>
+		</div>
+
+		<!--Show the standard diary view if editingMode is false -->
+		<ng-template #standardView>
+			<div class="entry-header">
+					<div *ngIf="title !== null; else newEntry" class="title" >
+						<h2> {{title}} </h2>        
+					</div>
+					<ng-template #newEntry>
+						<div class="title" >
+							<h2> Page Title </h2>        								
+						</div>
+					</ng-template>
+						<h3 class="date">{{entryDate}}</h3>
+				</div>
+		
+				<div class="entry-body">
+					<p>{{entry}}</p>
+				</div>
+		
+				<div class="edit">
+					<button type="button" class="btn btn-outline-primary" (click)="toggleEditingMode()">Edit</button>        
+				</div>
+		</ng-template>
+
+
+  </div>
+</div>

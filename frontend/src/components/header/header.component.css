@@ -1,0 +1,9 @@
+.navbar-brand {
+    width: 10%;
+    min-width: 112px;
+}
+
+.navbar {
+    border-bottom: #a2a2a2 3px solid;    
+    opacity: 0.8;
+}

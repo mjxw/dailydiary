@@ -1,0 +1,10 @@
+<app-header></app-header>    
+<div class="container">
+    <div class="body">
+        <app-entry *ngIf="!searching; else searchComponent"></app-entry>
+        <ng-template #searchComponent>
+            <app-search></app-search>
+        </ng-template>
+        <app-calendar></app-calendar>
+    </div>
+</div>

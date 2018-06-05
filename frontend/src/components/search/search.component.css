@@ -1,0 +1,16 @@
+.search-area {
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+}
+
+.results {
+    height: 600px;
+    padding-top: 2.5%;
+}
+
+.items ul {
+    text-decoration: underline;
+    cursor: pointer;
+    padding-left: 0px;    
+}
